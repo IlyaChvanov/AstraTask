@@ -24,7 +24,6 @@ int main(int argc, char *argv[])
     QObject::connect(filterEdit, &QLineEdit::textChanged, [=](const QString &text) {
         model->setNameFilters({ "*" + text + "*" });
         model->setNameFilterDisables(false);
-        treeView->setRootIndex(model->index(QDir::homePath()));
     });
 
     QWidget window;
